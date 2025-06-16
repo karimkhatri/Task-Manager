@@ -17,7 +17,7 @@ function Header({ setTasks, tasks, setIsAuthenticated, isAuthenticated }) {
   const fetchTasks = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/task/mytask",
+        "https://task-manager-backend-t4wf.onrender.com/api/v1/task/mytask",
         { withCredentials: true },
       );
       setAllTasks(data.tasks);
@@ -30,7 +30,7 @@ function Header({ setTasks, tasks, setIsAuthenticated, isAuthenticated }) {
   const handleLogout = async () => {
     try {
       const { data } = await axios.get(
-        "http://localhost:4000/api/v1/user/logout",
+        "https://task-manager-backend-t4wf.onrender.com/api/v1/user/logout",
         { withCredentials: true },
       );
       toast.success(data.message);
